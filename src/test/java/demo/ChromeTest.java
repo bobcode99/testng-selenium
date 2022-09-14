@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -15,34 +16,47 @@ public class ChromeTest {
     WebDriver driver = null;
     String projectPath = System.getProperty("user.dir");
 
-    @Test
-    public void openGoogle()throws Exception{
-        System.out.println("I am inside openGoogle test | " + Thread.currentThread().getId());
-        System.setProperty("webdriver.chrome.driver", projectPath + "/selenium-server/chromedriver");
-        driver = new ChromeDriver();
-        driver.get("https://google.com");
-        Thread.sleep(3000);
+    @AfterTest
+    public void close(){
+//        Thread.sleep(3000);
         driver.close();
     }
 
     @Test
-    public void openDdg()throws Exception{
+    public void openGoogle(){
+        System.out.println("I am inside openGoogle test | " + Thread.currentThread().getId());
+        System.setProperty("webdriver.chrome.driver", projectPath + "/selenium-server/chromedriver");
+        driver = new ChromeDriver();
+        driver.get("https://google.com");
+//        driver.close();
+    }
+
+    @Test
+    public void openDdg(){
         System.out.println("I am inside openGoogle test | " + Thread.currentThread().getId());
         System.setProperty("webdriver.chrome.driver", projectPath + "/selenium-server/chromedriver");
         driver = new ChromeDriver();
         driver.get("https://duckduckgo.com");
-        Thread.sleep(3000);
-        driver.close();
+//        driver.quit();
     }
     @Test
-    public void openSideex()throws Exception{
+    public void openSideex(){
         System.out.println("I am inside openGoogle test | " + Thread.currentThread().getId());
         System.setProperty("webdriver.chrome.driver", projectPath + "/selenium-server/chromedriver");
         driver = new ChromeDriver();
         driver.get("https://sideex.io");
-        Thread.sleep(3000);
-        driver.close();
+//        driver.quit();
     }
+
+    @Test
+    public void openGithub(){
+        System.out.println("I am inside openGoogle test | " + Thread.currentThread().getId());
+        System.setProperty("webdriver.chrome.driver", projectPath + "/selenium-server/chromedriver");
+        driver = new ChromeDriver();
+        driver.get("https://github.com");
+//        driver.quit();
+    }
+
 //    @Test
 //    public void redTest() throws Exception{
 //        System.out.println("I am inside Test 1 | " + Thread.currentThread().getId());
