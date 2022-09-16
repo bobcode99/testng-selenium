@@ -3,7 +3,12 @@
 <suite name="All Test Suite" parallel="methods" thread-count="4">
     <test name="Test">
         <classes>
-            <class name="demo.ChromeTest"/>
+            <!-- <class name="demo.EightTestChrome"/> -->
+            <class name="demo.EightTestChrome">
+                <methods>
+                    <include name="yellowTest" />
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>
