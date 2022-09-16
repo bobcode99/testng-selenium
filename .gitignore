@@ -107,3 +107,4 @@ Temporary Items
 
 selenium-server/
 test-output/
+*.log
