@@ -14,7 +14,7 @@ public class EightTestChrome {
 
     String projectPath = System.getProperty("user.dir");
 
-    @Test(invocationCount = 4, threadPoolSize = 4)
+    @Test(invocationCount = 8, threadPoolSize = 8)
     public void yellowTest() throws Exception {
         System.out.println("I am inside yellowTest | " +
                 Thread.currentThread().getId());
@@ -45,8 +45,8 @@ public class EightTestChrome {
         driver.quit();
     }
 
-    @Test(invocationCount = 4, threadPoolSize = 4)
-    public void testClickOk() {
+    @Test(invocationCount = 8, threadPoolSize = 8)
+    public void pchomeTest() {
         System.out.println("I am inside testClickOk | " + Thread.currentThread().getId());
         System.setProperty("webdriver.chrome.driver", projectPath + "/selenium-server/chromedriver");
         WebDriver driver = new ChromeDriver();
