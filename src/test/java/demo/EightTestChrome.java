@@ -22,7 +22,7 @@ public class EightTestChrome {
                 "/selenium-server/chromedriver");
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.momoshop.com.tw/main/Main.jsp");
-        driver.manage().window().setSize(new Dimension(1280, 642));
+        // driver.manage().window().setSize(new Dimension(1280, 642));
         Assert.assertEquals(driver.findElement(By.linkText("回首頁")).getText(), "回首頁");
         driver.findElement(By.id("keyword")).click();
         driver.findElement(By.id("keyword")).sendKeys("iphone 14");
@@ -82,7 +82,7 @@ public class EightTestChrome {
         System.setProperty("webdriver.chrome.driver", projectPath + "/selenium-server/chromedriver");
         WebDriver driver = new ChromeDriver();
         driver.get("https://24h.pchome.com.tw/");
-        driver.manage().window().setSize(new Dimension(1440, 821));
+        // driver.manage().window().setSize(new Dimension(1440, 821));
         {
             WebElement element = driver.findElement(By.linkText("NB"));
             Actions builder = new Actions(driver);
@@ -149,7 +149,7 @@ public class EightTestChrome {
         System.setProperty("webdriver.chrome.driver", projectPath + "/selenium-server/chromedriver");
         WebDriver driver = new ChromeDriver();
         driver.get("https://24h.pchome.com.tw/");
-        driver.manage().window().setSize(new Dimension(1440, 821));
+        // driver.manage().window().setSize(new Dimension(1440, 821));
         driver.findElement(By.cssSelector(".l-header__siteSearchInput")).click();
         driver.findElement(By.cssSelector(".l-header__siteSearchInput")).sendKeys("鍵盤");
         driver.findElement(By.cssSelector(".l-header__siteSearchInput")).sendKeys(Keys.ENTER);
@@ -168,7 +168,7 @@ public class EightTestChrome {
         System.setProperty("webdriver.chrome.driver", projectPath + "/selenium-server/chromedriver");
         WebDriver driver = new ChromeDriver();
         driver.get("https://24h.pchome.com.tw/");
-        driver.manage().window().setSize(new Dimension(1440, 821));
+        // driver.manage().window().setSize(new Dimension(1440, 821));
         driver.findElement(By.cssSelector(".l-header__siteSearchInput")).click();
         driver.findElement(By.cssSelector(".l-header__siteSearchInput")).sendKeys("滑鼠");
         driver.findElement(By.cssSelector(".l-header__siteSearchInput")).sendKeys(Keys.ENTER);
