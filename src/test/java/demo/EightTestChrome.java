@@ -14,6 +14,37 @@ public class EightTestChrome {
 
     String projectPath = System.getProperty("user.dir");
 
+    @Test
+    public void testsearchiphone14() {
+        System.out.println("I am inside testsearchiphone14 | " +
+                Thread.currentThread().getId());
+        System.setProperty("webdriver.chrome.driver", projectPath +
+                "/selenium-server/chromedriver");
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://www.momoshop.com.tw/main/Main.jsp");
+        driver.manage().window().setSize(new Dimension(1280, 642));
+        Assert.assertEquals(driver.findElement(By.linkText("回首頁")).getText(), "回首頁");
+        driver.findElement(By.id("keyword")).click();
+        driver.findElement(By.id("keyword")).sendKeys("iphone 14");
+        driver.findElement(By.id("keyword")).sendKeys(Keys.ENTER);
+        driver.findElement(By.xpath("//dt/ul/li[2]")).click();
+        driver.findElement(By.xpath("//dt/ul/li[3]")).click();
+        driver.findElement(By.id("priceE")).click();
+        driver.findElement(By.id("priceE")).sendKeys("30000");
+        driver.findElement(By.linkText("確認")).click();
+        driver.findElement(By.cssSelector(".accuracyPrd")).click();
+        driver.findElement(By.id("priceS")).click();
+        driver.findElement(By.id("priceS")).sendKeys("10000");
+        driver.findElement(By.cssSelector(".menuArea")).click();
+        driver.findElement(By.linkText("確認")).click();
+        Assert.assertEquals(driver.getTitle(), "iphone 14-momo購物網");
+        Assert.assertEquals(driver.findElement(By.linkText("回首頁")).getText(), "回首頁");
+        driver.findElement(By.id("bt_0_243_01_e2")).click();
+        Assert.assertEquals(driver.getTitle(), "momo購物網");
+        driver.close();
+        driver.quit();
+    }
+
     @Test(invocationCount = 8, threadPoolSize = 8)
     public void yellowTest() throws Exception {
         System.out.println("I am inside yellowTest | " +
